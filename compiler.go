@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-    // Specify the file to read
-    filePath := "example.txt" // Replace with your file name
+    filePath := "example.txt"
 
     // Open the file
     file, err := os.Open(filePath)
@@ -16,7 +15,7 @@ func main() {
         fmt.Printf("Error opening file: %v\n", err)
         return
     }
-    defer file.Close() // Ensure the file is closed when the function exits
+    defer file.Close() // Ensures the file is closed when the function exits
 
     // Create a scanner to read the file line by line
     scanner := bufio.NewScanner(file)
@@ -25,7 +24,7 @@ func main() {
         fmt.Println(scanner.Text())
     }
 
-    // Check for errors during scanning
+    // Checking for errors during scanning
     if err := scanner.Err(); err != nil {
         fmt.Printf("Error reading file: %v\n", err)
     }
